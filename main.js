@@ -179,25 +179,20 @@ display()
 //-------------------------------------------------------------------------------------------------------
 
 //13.Return a values which have two or more than two vowels---
-let colors = ["Red","Blue","Green","Yellow","Gray","Purple"];
-function check(colors){
-    let x=["a","e","i","o","u"];
-    let y=[];
-    colors.map((e)=>{
-        let c=0;
-        for(i=0;i<e.length;i++){
-            if(x.includes(e[i])){
-                c++;
-                if(c>1 && (e[i]!==e[i+1])){
-                 y.push(e)
-                }
-            }
-        }
-        return c
-    })
-    return y[0]+","+y[y.length-1];
-}
-console.log(check(colors));
+
+    let colors=["Red","Blue","Green","Yellow","Gray","Purple"];
+let answer=colors.filter((val,i)=>{
+    let count=0;
+    for(let i=0;i<val.length;i++){
+      if(val[i]=="a"||val[i]=="e"||val[i]=="i"||val[i]=="o"||val[i]=="u"){
+        count++
+      }
+    }
+    if(count>=2){
+      return val
+    }
+  })
+  console.log(answer)
 
 
 
